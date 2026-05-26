@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1280">
     <title>Kunal Sethi | dm2develop - Web Developer & Digital Solutions</title>
     <meta name="description" content="dm2develop by Kunal Sethi – Hardworking web developer crafting high-performance websites, web apps, and digital solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -898,14 +898,16 @@
             color: #E5DDD0;
         }
         
-        /* Responsive */
+        /* ===== COMPREHENSIVE MOBILE RESPONSIVE FIXES ===== */
         @media (max-width: 991px) {
+            /* Header & Navigation */
             .navbar-collapse {
                 position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;
                 height: 100vh;
+                height: 100dvh;
                 background: #111111;
                 z-index: 999;
                 display: flex;
@@ -914,40 +916,127 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.4s ease;
+                overflow-y: auto;
             }
             .navbar-collapse.active { opacity: 1; visibility: visible; }
-            .navbar-nav { flex-direction: column; gap: 20px; }
+            .navbar-nav { flex-direction: column; gap: 25px; padding: 20px; }
             .navbar-toggler { display: flex; }
-            .banner-block { height: 700px; }
-            .banner-block .content h1 { font-size: 72px; line-height: 100px; }
-            .blend-banner-block .content h2 { font-size: 36px; line-height: 48px; }
-            .blend-banner-block .content h3 { font-size: 32px; line-height: 44px; }
-            .service-block .title { font-size: 36px; line-height: 48px; }
-            .service-item .body .inner { flex-direction: column; padding-right: 0; }
-            .service-item .body .label { width: 100%; font-size: 72px; margin-bottom: 10px; }
+            
+            /* Hero Section */
+            .banner-block { height: 100vh; height: 100dvh; min-height: 600px; }
+            .banner-block .content { bottom: 80px; padding: 0 20px; }
+            .banner-block .content p { font-size: 24px; line-height: 32px; }
+            .banner-block .content h1 { font-size: 48px; line-height: 60px; }
+            
+            /* Blend Banner */
+            .blend-banner-block { height: auto; min-height: 500px; padding: 80px 20px; }
+            .blend-banner-block .content { position: relative; top: auto; left: auto; transform: none; padding: 40px 0; }
+            .blend-banner-block .content h2 { font-size: 28px; line-height: 40px; max-width: 100%; }
+            .blend-banner-block .content h3 { font-size: 24px; line-height: 36px; }
+            
+            /* Services */
+            .service-block { padding: 40px 0; }
+            .service-block .title { font-size: 28px; line-height: 38px; padding: 0 20px; }
+            .service-item .body { padding: 20px 0; }
+            .service-item .body .inner { flex-direction: column; padding-right: 0; gap: 15px; }
+            .service-item .body .label { width: 100%; font-size: 56px; line-height: 66px; padding: 10px 0; }
             .service-item .body .offer { width: 100%; padding: 0; }
-            .service-item .body .offer h4 { font-size: 32px; line-height: 44px; }
-            .projects-block .title { font-size: 72px; line-height: 80px; }
-            .projects .projects-list { flex-direction: column; padding: 0 20px; }
-            .projects .projects-item { width: 100%; padding: 0 20px !important; margin-bottom: 40px !important; margin-top: 0 !important; }
-            .brand-block .content .team { font-size: 60px; line-height: 60px; }
-            .brand-block .delivered { font-size: 48px; line-height: 48px; }
-            .brand-block .content .clients { font-size: 72px; line-height: 72px; }
-            .brand-list .brand-logos .brand-logo { width: 50%; }
+            .service-item .body .offer h4 { font-size: 24px; line-height: 34px; }
+            .service-item .body .offer p { font-size: 16px; line-height: 28px; }
+            .link-add { position: relative; top: auto; right: auto; margin-top: 15px; }
+            
+            /* Projects */
+            .projects-block .projects-heading { position: relative; top: auto; left: auto; transform: none; padding: 40px 20px; }
+            .projects-block .title { font-size: 48px; line-height: 56px; }
+            .projects { padding-top: 30px; }
+            .projects .projects-list { flex-direction: column; padding: 0 15px; gap: 30px; }
+            .projects .projects-item { width: 100%; padding: 0 !important; margin-bottom: 0 !important; margin-top: 0 !important; }
+            .projects .projects-item:nth-child(even) { margin-top: 0; }
+            .projects .projects-item .detail .name { font-size: 20px; line-height: 28px; }
+            
+            /* Brand/Stats */
+            .brand-block { padding: 40px 0; }
+            .brand-block .content .team { font-size: 40px; line-height: 48px; }
+            .brand-block .content .delivered { font-size: 32px; line-height: 40px; }
+            .brand-block .content .clients { font-size: 48px; line-height: 56px; }
+            .brand-list .brand-logos { padding: 30px 0; }
+            .brand-list .brand-logos .brand-logo { width: 50%; height: 100px; padding: 15px; }
+            .brand-list .brand-logos .brand-logo:nth-child(4n) { border-right: 1px solid #E5E5E5; }
+            .brand-list .brand-logos .brand-logo:nth-child(2n) { border-right: none; }
+            .brand-list .brand-logos .brand-logo:nth-child(n+5) { border-bottom: 1px solid #E5E5E5; }
+            .brand-list .brand-logos .brand-logo:nth-child(n+7) { border-bottom: none; }
+            
+            /* Contact/Enquiry */
+            .enquiry-block { padding: 40px 0; }
             .enquiry-block .title { display: none; }
-            .enquiry-block .subtitle { font-size: 28px; line-height: 40px; }
-            .enquiry-block .contact-info .row { flex-direction: column; }
+            .enquiry-block .subtitle { font-size: 24px; line-height: 36px; padding: 0 20px; }
+            .enquiry-block .container { padding: 0 20px; }
+            .form-theme .form-group { margin-bottom: 30px; }
+            .form-theme .form-group label { font-size: 18px; }
+            .enquiry-block .contact-info { margin-top: 40px; }
+            .enquiry-block .contact-info .row { flex-direction: column; gap: 30px; }
             .enquiry-block .contact-info .info { width: 100%; }
-            .enquiry-block .contact-info .info h4 { font-size: 28px; line-height: 38px; }
-            .enquiry-block .contact-info .info a { font-size: 18px; }
-            footer .upperDetail { flex-direction: column; gap: 20px; align-items: flex-start; }
-            footer .upperDetail .footerMenu { flex-wrap: wrap; width: 100%; }
-            footer .upperDetail .socialMenu { width: 100%; justify-content: center; }
-            footer .loweDetail .addressDetail { flex-direction: column; gap: 10px; }
+            .enquiry-block .contact-info .info h4 { font-size: 24px; line-height: 34px; }
+            .enquiry-block .contact-info .info a { font-size: 16px; line-height: 24px; }
+            
+            /* Footer */
+            footer { padding: 40px 0 0; }
+            footer .upperDetail { flex-direction: column; gap: 20px; align-items: flex-start; padding: 0 20px 20px; }
+            footer .upperDetail .footerMenu { flex-wrap: wrap; width: 100%; gap: 15px; }
+            footer .upperDetail .footerMenu li:not(:last-child) { margin-right: 0; }
+            footer .upperDetail .footerMenu li a { font-size: 16px; }
+            footer .upperDetail .socialMenu { width: 100%; justify-content: flex-start; padding: 0 20px; }
+            footer .loweDetail { padding: 0 20px; }
+            footer .loweDetail .addressDetail { flex-direction: column; gap: 20px; }
             footer .loweDetail .addressDetail li { width: 100% !important; padding: 0 !important; }
+            footer .loweDetail .addressDetail li a { font-size: 16px; padding-left: 30px; }
+            .copyright { margin-top: 30px; padding: 15px 20px; }
+            .copyright p { font-size: 13px; }
         }
+        
         @media (max-width: 767px) {
-            .brand-list .brand-logos .brand-logo { width: 100%; }
+            /* Extra small devices */
+            .banner-block .content h1 { font-size: 36px; line-height: 48px; }
+            .banner-block .content p { font-size: 20px; line-height: 28px; }
+            .blend-banner-block .content h2 { font-size: 22px; line-height: 32px; }
+            .blend-banner-block .content h3 { font-size: 20px; line-height: 30px; }
+            .service-block .title { font-size: 22px; line-height: 32px; }
+            .service-item .body .label { font-size: 42px; line-height: 52px; }
+            .service-item .body .offer h4 { font-size: 20px; line-height: 30px; }
+            .projects-block .title { font-size: 36px; line-height: 44px; }
+            .brand-list .brand-logos .brand-logo { width: 100%; border-right: none !important; }
+            .brand-list .brand-logos .brand-logo:nth-child(n+5) { border-bottom: 1px solid #E5E5E5; }
+            .brand-list .brand-logos .brand-logo:last-child { border-bottom: none; }
+            .btn-cirle a { width: 120px; height: 120px; }
+            .btn-cirle a span { font-size: 16px; }
+            .btn-cirle a svg { width: 120px; height: 120px; }
+            .enquiry-block .subtitle { font-size: 20px; line-height: 30px; }
+            .enquiry-block .contact-info .info h4 { font-size: 20px; line-height: 30px; }
+        }
+        
+        @media (max-width: 480px) {
+            /* Very small devices */
+            .navbar-brand { font-size: 18px; letter-spacing: 1px; }
+            .banner-block .content h1 { font-size: 28px; line-height: 38px; }
+            .banner-block .content p { font-size: 18px; line-height: 26px; }
+            .service-item .body .label { font-size: 36px; line-height: 46px; }
+            .service-item .body .offer h4 { font-size: 18px; line-height: 28px; }
+            .service-item .body .offer p { font-size: 14px; line-height: 24px; }
+            .projects-block .title { font-size: 28px; line-height: 36px; }
+            .brand-block .content .team { font-size: 32px; line-height: 40px; }
+            .brand-block .content .delivered { font-size: 24px; line-height: 32px; }
+            .brand-block .content .clients { font-size: 36px; line-height: 44px; }
+            .btn-blue { font-size: 14px; padding: 6px 20px; }
+            .nav-link { font-size: 14px; }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-cirle a:hover::before { opacity: 1; top: 0; left: 0; right: 0; bottom: 0; }
+            .btn-cirle a:hover svg { stroke-dashoffset: 530px; }
+            .projects .projects-item:hover .img img { transform: none; }
+            .brand-list .brand-logos .brand-logo:hover .logo-icon { background: #F0F0F0; color: #8A8A8A; }
+            .brand-list .brand-logos .brand-logo:hover .logo-text { color: #8A8A8A; }
         }
         body.hidden-scroll { overflow: hidden; }
     </style>
@@ -1220,7 +1309,7 @@
             <div class="btn-cirle">
                 <a href="#" aria-label="Project Detail">
                     <span>Show Portfolio</span>
-                    <svg viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="140" height="140" viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="85" cy="85" r="84" stroke="white" stroke-opacity="0.4" stroke-width="2" class="btn-circle"></circle>
                     </svg>
                 </a>
@@ -1408,16 +1497,36 @@
         // Mobile Menu
         const toggler = document.getElementById('navbar-toggler');
         const navbarCollapse = document.getElementById('navbar-collapse');
+        
         toggler.addEventListener('click', () => {
             navbarCollapse.classList.toggle('active');
             document.body.classList.toggle('hidden-scroll');
         });
 
+        // Close menu when clicking nav links
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navbarCollapse.classList.remove('active');
                 document.body.classList.remove('hidden-scroll');
             });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navbarCollapse.classList.contains('active') && 
+                !navbarCollapse.contains(e.target) && 
+                !toggler.contains(e.target)) {
+                navbarCollapse.classList.remove('active');
+                document.body.classList.remove('hidden-scroll');
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navbarCollapse.classList.contains('active')) {
+                navbarCollapse.classList.remove('active');
+                document.body.classList.remove('hidden-scroll');
+            }
         });
 
         // Smooth scroll
