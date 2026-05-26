@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>Careers | dm2develop</title>
+    <meta name="description" content="Join dm2develop - Web Developer & Digital Solutions. Explore career opportunities.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #111111;
+            color: #E5DDD0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 50px;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(17, 17, 17, 0.9);
+        }
+        .navbar-brand {
+            font-family: 'Michroma', sans-serif;
+            font-size: 24px;
+            color: #D4AF37;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .home-icon {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D4AF37;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+        .home-icon:hover {
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.1);
+            transform: scale(1.1);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 150px 50px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #111111 0%, #0A0A0A 100%);
+        }
+        .hero h1 {
+            font-family: 'Michroma', sans-serif;
+            font-size: 72px;
+            line-height: 90px;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 24px;
+            color: #A0A0A0;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .hero .cta {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
+            padding: 12px 40px;
+            border-radius: 40px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            margin-top: 20px;
+        }
+        .hero .cta:hover {
+            background: #D4AF37;
+            color: #111111;
+        }
+        
+        /* Culture Section */
+        .culture-section {
+            padding: 80px 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .culture-section h2 {
+            font-family: 'Michroma', sans-serif;
+            font-size: 48px;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .culture-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: #1a1a1a;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            transition: all 0.5s ease;
+        }
+        .culture-card:hover {
+            border-color: #D4AF37;
+            transform: translateY(-10px);
+        }
+        .culture-card .icon {
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: #D4AF37;
+            font-size: 32px;
+        }
+        .culture-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            color: #E5DDD0;
+            margin-bottom: 15px;
+        }
+        .culture-card p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 26px;
+            color: #A0A0A0;
+        }
+        
+        /* Open Positions */
+        .positions-section {
+            background: #0A0A0A;
+            padding: 80px 50px;
+        }
+        .positions-section h2 {
+            font-family: 'Michroma', sans-serif;
+            font-size: 48px;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .positions-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .position-card {
+            background: #1a1a1a;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: all 0.5s ease;
+        }
+        .position-card:hover {
+            border-color: #D4AF37;
+        }
+        .position-card .position-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .position-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 28px;
+            color: #E5DDD0;
+        }
+        .position-card .department {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #D4AF37;
+            margin-bottom: 15px;
+        }
+        .position-card .description {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 28px;
+            color: #A0A0A0;
+            margin-bottom: 20px;
+        }
+        .position-card .requirements {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .position-card .requirements li {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: #A0A0A0;
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .position-card .requirements li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 8px;
+            height: 8px;
+            background: #D4AF37;
+            border-radius: 50%;
+        }
+        .apply-btn {
+            display: inline-block;
+            background: #D4AF37;
+            color: #111111;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            border: 1px solid #D4AF37;
+        }
+        .apply-btn:hover {
+            background: transparent;
+            color: #D4AF37;
+        }
+        
+        /* No positions message */
+        .no-positions {
+            text-align: center;
+            padding: 60px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            border: 1px solid #333333;
+        }
+        .no-positions h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 28px;
+            color: #E5DDD0;
+            margin-bottom: 20px;
+        }
+        .no-positions p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            color: #A0A0A0;
+            line-height: 30px;
+        }
+        .no-positions .email-link {
+            color: #D4AF37;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .no-positions .email-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .benefits-section h2 {
+            font-family: 'Michroma', sans-serif;
+            font-size: 48px;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+        }
+        .benefit-item .benefit-icon {
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: #D4AF37;
+            font-size: 24px;
+        }
+        .benefit-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: #E5DDD0;
+            margin-bottom: 10px;
+        }
+        .benefit-item p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: #A0A0A0;
+            line-height: 22px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #111111;
+            width: 100%;
+            overflow: hidden;
+            border-top: 1px solid #333333;
+            padding: 50px 0 0;
+        }
+        footer .upperDetail {
+            width: 100%;
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px 20px;
+        }
+        footer .upperDetail .footerMenu {
+            width: calc(100% - 130px);
+            justify-content: left;
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        footer .upperDetail .footerMenu li a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: #F5F5F0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer .upperDetail .footerMenu li a:hover { color: #D4AF37; }
+        footer .upperDetail .socialMenu {
+            list-style: none;
+            display: flex;
+            width: 130px;
+        }
+        footer .upperDetail .socialMenu li { margin: 0 10px; }
+        footer .upperDetail .socialMenu li a {
+            display: block;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            background-color: #333333;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #D4AF37;
+            text-decoration: none;
+            transition: all 0.5s;
+        }
+        footer .upperDetail .socialMenu li a:hover {
+            background-color: #D4AF37;
+            color: #E5DDD0;
+        }
+        footer .loweDetail {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            padding: 0 50px;
+        }
+        footer .loweDetail .addressDetail {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            list-style: none;
+        }
+        footer .loweDetail .addressDetail li { width: 30%; }
+        footer .loweDetail .addressDetail li:last-child { width: 45%; }
+        footer .loweDetail .addressDetail li:nth-child(2) {
+            width: 25%;
+            padding: 0 10px;
+        }
+        footer .loweDetail .addressDetail li a {
+            font-size: 18px;
+            color: #A0A0A0;
+            padding-left: 30px;
+            position: relative;
+            display: block;
+            text-decoration: none;
+        }
+        footer .loweDetail .addressDetail li a i {
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        .copyright {
+            width: 100%;
+            background: #111111;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #333333;
+        }
+        .copyright p {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #E5DDD0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 48px; line-height: 60px; }
+            .culture-grid { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+            .position-card .position-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="navbar-brand">dm2develop</a>
+        <a href="index.html" class="home-icon" aria-label="Back to Home">
+            <i class="fas fa-home"></i>
+        </a>
+    </header>
+
+    <div class="hero">
+        <h1>Join Our Team</h1>
+        <p>We're always looking for passionate, creative individuals who want to make a difference in the digital world. Grow your career with us.</p>
+        <a href="#positions" class="cta">View Open Positions</a>
+    </div>
+
+    <div class="culture-section">
+        <h2>Why Work With Us?</h2>
+        <div class="culture-grid">
+            <div class="culture-card">
+                <div class="icon"><i class="fas fa-rocket"></i></div>
+                <h3>Growth</h3>
+                <p>Continuous learning opportunities and career advancement. We invest in your professional development.</p>
+            </div>
+            <div class="culture-card">
+                <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                <h3>Innovation</h3>
+                <p>Work with cutting-edge technologies and creative freedom to implement your ideas.</p>
+            </div>
+            <div class="culture-card">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <h3>Collaboration</h3>
+                <p>Supportive team environment where every voice matters and teamwork drives success.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="positions-section" id="positions">
+        <h2>Open Positions</h2>
+        
+        <div class="positions-list">
+            <!-- No current openings -->
+            <div class="no-positions">
+                <h3>No Open Positions Currently</h3>
+                <p>We're not hiring at the moment, but we're always interested in meeting talented people.<br>Send your resume to <a href="mailto:sethivayu@gmail.com" class="email-link">sethivayu@gmail.com</a> and we'll reach out when opportunities arise.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="benefits-section">
+        <h2>Benefits</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-laptop"></i></div>
+                <h4>Remote Work</h4>
+                <p>Flexible work from home options</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+                <h4>Flexible Hours</h4>
+                <p>Work when you're most productive</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h4>Learning</h4>
+                <p>Courses and skill development</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon"><i class="fas fa-trophy"></i></div>
+                <h4>Projects</h4>
+                <p>Work on exciting diverse projects</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="upperDetail">
+            <ul class="footerMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#projects">Portfolio</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <ul class="socialMenu">
+                <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
+        <div class="loweDetail">
+            <ul class="addressDetail">
+                <li><a href="mailto:sethivayu@gmail.com"><i class="fas fa-envelope"></i> sethivayu@gmail.com</a></li>
+                <li><a href="tel:+919289109101"><i class="fas fa-phone-alt"></i> +91 92 8910 9101</a></li>
+                <li><a href="#"><i class="fas fa-map-marker-alt"></i> Delhi, India</a></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="copyright">
+        <p>2026 dm2develop by Kunal Sethi. All rights reserved.</p>
+    </div>
+</body>
+</html>
