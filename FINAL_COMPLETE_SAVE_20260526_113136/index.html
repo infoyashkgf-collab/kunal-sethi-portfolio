@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>Kunal Sethi | dm2develop - Web Developer & Digital Solutions</title>
+    <meta name="description" content="dm2develop by Kunal Sethi – Hardworking web developer crafting high-performance websites, web apps, and digital solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Gold Theme Colors */
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-light: #FFD700;
+            --gold-dark: #B8860B;
+            --gold-muted: #8B7355;
+            --bg-dark: #111111;
+            --bg-darker: #0A0A0A;
+            --text-light: #F5F5F0;
+        }
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-light: #FFD700;
+            --gold-dark: #B8860B;
+            --gold-muted: #8B7355;
+            --bg-dark: #111111;
+            --bg-darker: #0A0A0A;
+            --text-light: #F5F5F0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #A0A0A0;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; transition: all 0.5s ease; }
+        ul { list-style: none; margin: 0; padding: 0; }
+        
+        /* Bootstrap Layout Utilities */
+        .container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .col-12, .col-md-6, .col-lg-6, .col-lg-3, .col-lg-9, .col-lg-4, .col-lg-8, .col-sm-6, .col-sm-12 {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .col-12 { flex: 0 0 100%; max-width: 100%; }
+        .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+        .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+        .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+        .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+        .col-lg-4 { flex: 0 0 33.333333%; max-width: 33.333333%; }
+        .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+        .col-lg-8 { flex: 0 0 66.666667%; max-width: 66.666667%; }
+        .col-lg-9 { flex: 0 0 75%; max-width: 75%; }
+        .align-items-end { align-items: flex-end !important; }
+        .align-items-center { align-items: center !important; }
+        .justify-content-center { justify-content: center !important; }
+        .justify-content-between { justify-content: space-between !important; }
+        .d-flex { display: flex !important; }
+        .d-inline-block { display: inline-block !important; }
+        .d-none { display: none !important; }
+        .position-relative { position: relative !important; }
+        .position-absolute { position: absolute !important; }
+        .position-fixed { position: fixed !important; }
+        
+        /* Utility Spacing */
+        .pt { padding-top: 50px; }
+        .pb { padding-bottom: 50px; }
+        .ptb { padding: 50px 0; }
+        .plr { padding: 0 50px; }
+        .ptblr { padding: 50px; }
+        .pt-100 { padding-top: 100px; }
+        .pb-100 { padding-bottom: 100px; }
+        .ptb-100 { padding: 100px 0; }
+        
+        /* Background Colors */
+        .bg-gray { background: #111111; }
+        
+        section { overflow: hidden; }
+        
+        /* Header - Exact Olive.in */
+        header {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            padding: 10px 0;
+            transition: all 0.5s ease;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        header.sticky {
+            position: fixed;
+            background: #111111;
+            animation: sticky 1.2s;
+            box-shadow: 0 5px 10px rgb(0 0 0 / 50%);
+            padding: 0;
+            z-index: 999;
+        }
+        header.sticky .navbar-brand { color: #D4AF37; }
+        .navbar-brand {
+            font-family: 'Michroma', sans-serif;
+            font-size: 24px;
+            color: #FFFFFF;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        
+        .navbar-collapse {
+            flex-grow: inherit;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: #FFFFFF;
+            text-decoration: none;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            background-color: currentColor;
+            height: 1px;
+            transition: transform .3s;
+            z-index: 20;
+            left: 0;
+            width: 100%;
+            transform: scaleX(0);
+            will-change: transform;
+        }
+        .nav-link:hover::after { transform: scaleX(1); }
+        header.sticky .nav-link { color: #FFFFFF; }
+        
+        .btn-blue {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 17px;
+            color: #E5DDD0;
+            background: #D4AF37;
+            box-shadow: none;
+            outline: none;
+            padding: 8px 30px;
+            border: 1px solid #D4AF37;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+            display: inline-block;
+        }
+        .btn-blue:hover {
+            background: transparent;
+            color: #E5DDD0;
+            border-color: #E5DDD0;
+        }
+        header.sticky .btn-blue:hover { color: #D4AF37; border-color: #D4AF37; }
+        
+        .navbar-toggler {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1000;
+        }
+        .bar1, .bar2, .bar3 {
+            width: 25px;
+            height: 2px;
+            background: #E5DDD0;
+            transition: all 0.4s;
+        }
+        header.sticky .bar1, header.sticky .bar2, header.sticky .bar3 { background: #E5DDD0; }
+        
+        /* Hero - Exact match */
+        .banner-block {
+            width: 100%;
+            height: 1000px;
+            overflow: hidden;
+            position: relative;
+        }
+        .parallax-window {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: url('https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=1920&q=80') center center no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            will-change: transform;
+            z-index: 0;
+        }
+        .banner-block .content {
+            position: absolute;
+            bottom: 150px;
+            width: 100%;
+            left: 0;
+            z-index: 2;
+        }
+        .banner-block .content p {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 36px;
+            line-height: 44px;
+            color: #E5DDD0;
+        }
+        .banner-block .content h1 {
+            font-family: 'Michroma', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 144px;
+            line-height: 205px;
+            color: #E5DDD0;
+            margin: 0;
+        }
+        
+        /* Blend Banner */
+        .blend-banner-block {
+            width: 100%;
+            height: 800px;
+            overflow: hidden;
+            background: url('https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?w=1920&q=80') center center no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+        .blend-banner-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17,17,17,0.7);
+        }
+        .blend-banner-block .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+        .blend-banner-block .content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 88px;
+            color: #E5DDD0;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        .blend-banner-block .content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 72px;
+            line-height: 88px;
+            color: #E5DDD0;
+        }
+        
+        /* Services */
+        .service-block {
+            width: 100%;
+            overflow: hidden;
+            background-color: #0A0A0A;
+            z-index: 1;
+            padding: 50px 0;
+        }
+        .service-block .title {
+            font-family: 'Michroma', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 60px;
+            line-height: 80px;
+            color: #D4AF37;
+        }
+        .service-item { width: 100%; }
+        .service-item .body {
+            width: 100%;
+            padding: 30px 0;
+            border-bottom: 1px solid #444444;
+        }
+        .service-item .body:last-child { border: 0; padding-bottom: 0; }
+        .service-item .body .inner {
+            width: 100%;
+            display: flex;
+            position: relative;
+            padding-right: 70px;
+        }
+        .service-item .body .label {
+            width: 25%;
+            padding: 20px 20px 20px 0;
+            font-family: 'Michroma', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 96px;
+            line-height: 100px;
+            background: linear-gradient(180deg, #B8860B 0%, #111111 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .service-item .body .offer {
+            width: 75%;
+            padding: 20px;
+        }
+        .service-item .body .offer h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 48px;
+            line-height: 59px;
+            color: #F5F5F0;
+        }
+        .service-item .body .offer p {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 35px;
+            color: #A0A0A0;
+            margin: 15px 0 0;
+        }
+        .link-add {
+            width: 50px;
+            position: absolute;
+            right: 0;
+            top: 20px;
+        }
+        .link-add img { transform: rotateX(180deg); }
+        
+        /* Projects */
+        .projects-block {
+            background: #111111;
+            width: 100%;
+            overflow: visible;
+        }
+        .projects-block .projects-bg {
+            width: 100%;
+            position: absolute;
+            height: 300px;
+            z-index: 1;
+            top: 0;
+            background: linear-gradient(180deg, rgb(10 10 10) 0%, rgb(17 17 17 / 89%) 47%, rgba(0, 0, 0, 0) 100%);
+        }
+        .projects-block .projects-bg-btm {
+            width: 100%;
+            position: absolute;
+            height: 400px;
+            background: linear-gradient(0deg, rgb(17 17 17) 0%, rgb(11 11 11) 77%, rgba(0, 0, 0, 0) 100%);
+            bottom: 0;
+        }
+        .projects-block .projects-heading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            pointer-events: none;
+            transition: opacity 0.15s linear;
+            opacity: 0;
+        }
+        .projects-block .title {
+            font-family: 'Michroma', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 144px;
+            line-height: 144px;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(255deg, #B8860B 14.21%, #D4AF37 53.06%, #8B7355 94.42%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .projects {
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(180deg, rgb(17 17 17 / 42%) 26.56%, rgb(10 10 10 / 39%) 100%);
+            padding-top: 50px;
+        }
+        .projects .projects-list {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0 60px;
+        }
+        .projects .projects-item {
+            padding: 0 20px;
+            margin-bottom: 25%;
+            width: 50%;
+        }
+        .projects .projects-item:nth-child(odd) { padding-right: 50px; }
+        .projects .projects-item:nth-child(even) {
+            margin-top: 25%;
+            margin-bottom: 0;
+            padding-left: 50px;
+        }
+        .projects .projects-item .img {
+            width: 100%;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .projects .projects-item .img img {
+            width: 100%;
+            transition: transform 0.6s;
+        }
+        .projects .projects-item:hover .img img { transform: scale(1.03); }
+        .projects .projects-item .detail {
+            width: 100%;
+            position: relative;
+            padding-top: 10px;
+        }
+        .projects .projects-item .detail .name {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 30px;
+            color: #E5DDD0;
+            margin-bottom: 10px;
+            display: inline-block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .projects .projects-item .detail .name:hover { color: #D4AF37; }
+        
+        /* Circle Button */
+        .btn-cirle {
+            width: 100%;
+            text-align: center;
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-cirle a {
+            position: relative;
+            z-index: 1;
+            width: 140px;
+            height: 140px;
+            display: inline-block;
+        }
+        .btn-cirle a span {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            color: #E5DDD0;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+            pointer-events: none;
+            text-align: center;
+        }
+        .btn-cirle a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid rgb(255 255 255 / 20%);
+            transition: all .8s cubic-bezier(0.16, 1, 0.3, 1);
+            border-radius: 50%;
+        }
+        .btn-cirle a:hover::before {
+            opacity: 0;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            transition-duration: 1.1s;
+        }
+        .btn-cirle a svg {
+            transform: rotate(90deg) scale(-1, 1);
+            stroke-dashoffset: 530px;
+            stroke-dasharray: 530px;
+            transition: stroke-dashoffset .8s cubic-bezier(0.16, 1, 0.3, 1) 0s;
+        }
+        .btn-cirle a:hover svg { stroke-dashoffset: 1060px; }
+        /* Gold variant for dark sections */
+        .btn-cirle-gold a span { color: #E5DDD0; }
+        .btn-cirle-gold a::before {
+            border: 2px solid rgb(212 175 55 / 40%);
+        }
+        .btn-cirle-gold a svg circle {
+            stroke: #D4AF37;
+            stroke-opacity: 0.4;
+        }
+        
+        /* Brand Block */
+        .brand-block {
+            width: 100%;
+            overflow: hidden;
+            padding: 50px 0;
+        }
+        .brand-block .content {
+            width: 100%;
+            overflow: hidden;
+            box-sizing: content-box;
+            padding-left: 100%;
+        }
+        /* Marquee Stats - visible on dark bg */
+        .brand-block .content .team,
+        .brand-block .content .delivered,
+        .brand-block .content .clients {
+            color: #E5DDD0;
+        }
+        .brand-block .content .team {
+            font-size: 120px;
+            line-height: 120px;
+            animation: ltr-slide 20s linear infinite;
+        }
+        .brand-block .content .delivered {
+            font-size: 90px;
+            line-height: 80px;
+            animation: ltr-slide 40s linear infinite reverse;
+        }
+        .brand-block .content .clients {
+            font-size: 144px;
+            line-height: 144px;
+            animation: ltr-slide 15s linear infinite;
+        }
+        @keyframes ltr-slide {
+            0% { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+        .brand-list { width: 100%; }
+        .brand-list .brand-logos {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px 0;
+        }
+        .brand-list .brand-logos .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 25%;
+            height: 120px;
+            position: relative;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.5s ease;
+            flex-direction: column;
+            gap: 8px;
+            border-right: 1px solid #E5E5E5;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        .brand-list .brand-logos .brand-logo:nth-child(4n) {
+            border-right: none;
+        }
+        .brand-list .brand-logos .brand-logo:nth-child(n+5) {
+            border-bottom: none;
+        }
+        .brand-list .brand-logos .brand-logo .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: #F0F0F0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Michroma', sans-serif;
+            font-size: 18px;
+            color: #8A8A8A;
+            transition: all 0.5s ease;
+        }
+        .brand-list .brand-logos .brand-logo:hover .logo-icon {
+            background: #111111;
+            color: #E5DDD0;
+        }
+        .brand-list .brand-logos .brand-logo .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #8A8A8A;
+            letter-spacing: 1px;
+            transition: all 0.5s ease;
+        }
+        .brand-list .brand-logos .brand-logo:hover .logo-text {
+            color: #F5F5F0;
+        }
+        .brand-list .brand-logos .brand-logo .client-logo {
+            width: 120px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .brand-list .brand-logos .brand-logo .client-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(1);
+            opacity: 0.7;
+            transition: all 0.5s ease;
+        }
+        .brand-list .brand-logos .brand-logo:hover .client-logo img {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        .brand-list .brand-logos .brand-logo i {
+            font-size: 48px;
+            color: #444444;
+            filter: grayscale(1);
+            opacity: 0.6;
+            transition: all 0.5s ease;
+        }
+        .brand-list .brand-logos .brand-logo span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #444444;
+            transition: all 0.5s ease;
+        }
+        .brand-list .brand-logos .brand-logo:hover i {
+            color: #F5F5F0;
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        .brand-list .brand-logos .brand-logo:hover span {
+            color: #F5F5F0;
+        }
+        .brand-list .action {
+            width: 100%;
+            text-align: center;
+        }
+        .brand-list .action a {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 80px;
+            color: #A0A0A0;
+            text-decoration: none;
+        }
+        
+        /* Enquiry */
+        .enquiry-block {
+            width: 100%;
+            background: #111111;
+            overflow: hidden;
+            padding: 50px 0;
+            position: relative;
+        }
+        .enquiry-block .title {
+            font-family: 'Michroma', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 70px;
+            line-height: 75px;
+            text-align: center;
+            text-transform: uppercase;
+            background: linear-gradient(0deg, rgba(184, 175, 55, 0.5) 6.59%, #D4AF37 74.63%, rgba(184, 175, 55, 0.83) 74.63%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: rotate(-90deg);
+            white-space: nowrap;
+            position: absolute;
+            top: 43%;
+            left: -325px;
+        }
+        .enquiry-block .container { max-width: 100%; padding: 0 60px; }
+        .enquiry-block .subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 48px;
+            line-height: 59px;
+            color: #E5DDD0;
+        }
+        .form-theme { width: 100%; }
+        .form-theme .form-group {
+            width: 100%;
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .form-theme .form-group label {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 24px;
+            color: #E5DDD0;
+        }
+        .form-theme .form-group .form-control {
+            border-radius: 0;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid #E5DDD0;
+            font-size: 16px;
+            padding: 5px 0 10px;
+            box-shadow: none;
+            outline: none;
+            color: #E5DDD0;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .form-theme .form-group .form-control::placeholder {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 200;
+            font-size: 13px;
+            line-height: 16px;
+            text-transform: capitalize;
+            color: #E5DDD0;
+        }
+        .form-theme .action {
+            width: 100%;
+            text-align: center;
+        }
+        .enquiry-block .contact-info {
+            width: 100%;
+            margin-top: 60px;
+        }
+        .enquiry-block .contact-info .row {
+            display: flex;
+            gap: 40px;
+        }
+        .enquiry-block .contact-info .info {
+            width: 50%;
+        }
+        .enquiry-block .contact-info .info h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 48px;
+            line-height: 58px;
+            color: #E5DDD0;
+            margin-bottom: 20px;
+        }
+        .enquiry-block .contact-info .info a {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 29px;
+            color: #E5DDD0;
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: #111111;
+            width: 100%;
+            overflow: hidden;
+            border-top: 1px solid #333333;
+            padding: 50px 0 0;
+        }
+        footer .info p {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #F5F5F0;
+            padding-right: 20px;
+            margin: 15px 0 0;
+        }
+        footer .info .brand-logo {
+            font-family: 'Michroma', sans-serif;
+            font-size: 24px;
+            color: #F5F5F0;
+            margin-bottom: 15px;
+            display: block;
+        }
+        footer .upperDetail {
+            width: 100%;
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        footer .upperDetail .footerMenu {
+            width: calc(100% - 130px);
+            justify-content: left;
+            display: flex;
+            list-style: none;
+        }
+        footer .upperDetail .footerMenu li:not(:last-child) {
+            margin-right: 40px;
+        }
+        footer .upperDetail .footerMenu li a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: #F5F5F0;
+            text-decoration: none;
+        }
+        footer .upperDetail .socialMenu {
+            list-style: none;
+            display: flex;
+            width: 130px;
+        }
+        footer .upperDetail .socialMenu li {
+            margin: 0 10px;
+        }
+        footer .upperDetail .socialMenu li a {
+            display: block;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            background-color: #333333;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #D4AF37;
+            text-decoration: none;
+            transition: all 0.5s;
+        }
+        footer .upperDetail .socialMenu li a:hover {
+            background-color: #D4AF37;
+            color: #E5DDD0;
+        }
+        footer .loweDetail {
+            width: 100%;
+            margin-top: 20px;
+        }
+        footer .loweDetail .addressDetail {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            list-style: none;
+        }
+        footer .loweDetail .addressDetail li {
+            width: 30%;
+        }
+        footer .loweDetail .addressDetail li:last-child {
+            width: 45%;
+        }
+        footer .loweDetail .addressDetail li:nth-child(2) {
+            width: 25%;
+            padding: 0 10px;
+        }
+        footer .loweDetail .addressDetail li a {
+            font-size: 18px;
+            color: #A0A0A0;
+            padding-left: 30px;
+            position: relative;
+            display: block;
+            text-decoration: none;
+        }
+        footer .loweDetail .addressDetail li a i {
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        .copyright {
+            width: 100%;
+            background: #111111;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .copyright p {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #E5DDD0;
+        }
+        
+        /* ===== COMPREHENSIVE MOBILE RESPONSIVE FIXES ===== */
+        @media (max-width: 991px) {
+            /* Header & Navigation */
+            .navbar-collapse {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                height: 100dvh;
+                background: #111111;
+                z-index: 999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s ease;
+                overflow-y: auto;
+            }
+            .navbar-collapse.active { opacity: 1; visibility: visible; }
+            .navbar-nav { flex-direction: column; gap: 25px; padding: 20px; }
+            .navbar-toggler { display: flex; }
+            
+            /* Hero Section */
+            .banner-block { height: 100vh; height: 100dvh; min-height: 600px; }
+            .banner-block .content { bottom: 80px; padding: 0 20px; }
+            .banner-block .content p { font-size: 24px; line-height: 32px; }
+            .banner-block .content h1 { font-size: 48px; line-height: 60px; }
+            
+            /* Blend Banner */
+            .blend-banner-block { height: auto; min-height: 500px; padding: 80px 20px; }
+            .blend-banner-block .content { position: relative; top: auto; left: auto; transform: none; padding: 40px 0; }
+            .blend-banner-block .content h2 { font-size: 28px; line-height: 40px; max-width: 100%; }
+            .blend-banner-block .content h3 { font-size: 24px; line-height: 36px; }
+            
+            /* Services */
+            .service-block { padding: 40px 0; }
+            .service-block .title { font-size: 28px; line-height: 38px; padding: 0 20px; }
+            .service-item .body { padding: 20px 0; }
+            .service-item .body .inner { flex-direction: column; padding-right: 0; gap: 15px; }
+            .service-item .body .label { width: 100%; font-size: 56px; line-height: 66px; padding: 10px 0; }
+            .service-item .body .offer { width: 100%; padding: 0; }
+            .service-item .body .offer h4 { font-size: 24px; line-height: 34px; }
+            .service-item .body .offer p { font-size: 16px; line-height: 28px; }
+            .link-add { position: relative; top: auto; right: auto; margin-top: 15px; }
+            
+            /* Projects */
+            .projects-block .projects-heading { position: relative; top: auto; left: auto; transform: none; padding: 40px 20px; }
+            .projects-block .title { font-size: 48px; line-height: 56px; }
+            .projects { padding-top: 30px; }
+            .projects .projects-list { flex-direction: column; padding: 0 15px; gap: 30px; }
+            .projects .projects-item { width: 100%; padding: 0 !important; margin-bottom: 0 !important; margin-top: 0 !important; }
+            .projects .projects-item:nth-child(even) { margin-top: 0; }
+            .projects .projects-item .detail .name { font-size: 20px; line-height: 28px; }
+            
+            /* Brand/Stats */
+            .brand-block { padding: 40px 0; }
+            .brand-block .content .team { font-size: 40px; line-height: 48px; }
+            .brand-block .content .delivered { font-size: 32px; line-height: 40px; }
+            .brand-block .content .clients { font-size: 48px; line-height: 56px; }
+            .brand-list .brand-logos { padding: 30px 0; }
+            .brand-list .brand-logos .brand-logo { width: 50%; height: 100px; padding: 15px; }
+            .brand-list .brand-logos .brand-logo:nth-child(4n) { border-right: 1px solid #E5E5E5; }
+            .brand-list .brand-logos .brand-logo:nth-child(2n) { border-right: none; }
+            .brand-list .brand-logos .brand-logo:nth-child(n+5) { border-bottom: 1px solid #E5E5E5; }
+            .brand-list .brand-logos .brand-logo:nth-child(n+7) { border-bottom: none; }
+            
+            /* Contact/Enquiry */
+            .enquiry-block { padding: 40px 0; }
+            .enquiry-block .title { display: none; }
+            .enquiry-block .subtitle { font-size: 24px; line-height: 36px; padding: 0 20px; }
+            .enquiry-block .container { padding: 0 20px; }
+            .form-theme .form-group { margin-bottom: 30px; }
+            .form-theme .form-group label { font-size: 18px; }
+            .enquiry-block .contact-info { margin-top: 40px; }
+            .enquiry-block .contact-info .row { flex-direction: column; gap: 30px; }
+            .enquiry-block .contact-info .info { width: 100%; }
+            .enquiry-block .contact-info .info h4 { font-size: 24px; line-height: 34px; }
+            .enquiry-block .contact-info .info a { font-size: 16px; line-height: 24px; }
+            
+            /* Footer */
+            footer { padding: 40px 0 0; }
+            footer .upperDetail { flex-direction: column; gap: 20px; align-items: flex-start; padding: 0 20px 20px; }
+            footer .upperDetail .footerMenu { flex-wrap: wrap; width: 100%; gap: 15px; }
+            footer .upperDetail .footerMenu li:not(:last-child) { margin-right: 0; }
+            footer .upperDetail .footerMenu li a { font-size: 16px; }
+            footer .upperDetail .socialMenu { width: 100%; justify-content: flex-start; padding: 0 20px; }
+            footer .loweDetail { padding: 0 20px; }
+            footer .loweDetail .addressDetail { flex-direction: column; gap: 20px; }
+            footer .loweDetail .addressDetail li { width: 100% !important; padding: 0 !important; }
+            footer .loweDetail .addressDetail li a { font-size: 16px; padding-left: 30px; }
+            .copyright { margin-top: 30px; padding: 15px 20px; }
+            .copyright p { font-size: 13px; }
+        }
+        
+        @media (max-width: 767px) {
+            /* Extra small devices */
+            .banner-block .content h1 { font-size: 36px; line-height: 48px; }
+            .banner-block .content p { font-size: 20px; line-height: 28px; }
+            .blend-banner-block .content h2 { font-size: 22px; line-height: 32px; }
+            .blend-banner-block .content h3 { font-size: 20px; line-height: 30px; }
+            .service-block .title { font-size: 22px; line-height: 32px; }
+            .service-item .body .label { font-size: 42px; line-height: 52px; }
+            .service-item .body .offer h4 { font-size: 20px; line-height: 30px; }
+            .projects-block .title { font-size: 36px; line-height: 44px; }
+            .brand-list .brand-logos .brand-logo { width: 100%; border-right: none !important; }
+            .brand-list .brand-logos .brand-logo:nth-child(n+5) { border-bottom: 1px solid #E5E5E5; }
+            .brand-list .brand-logos .brand-logo:last-child { border-bottom: none; }
+            .btn-cirle a { width: 120px; height: 120px; }
+            .btn-cirle a span { font-size: 16px; }
+            .btn-cirle a svg { width: 120px; height: 120px; }
+            .enquiry-block .subtitle { font-size: 20px; line-height: 30px; }
+            .enquiry-block .contact-info .info h4 { font-size: 20px; line-height: 30px; }
+        }
+        
+        @media (max-width: 480px) {
+            /* Very small devices */
+            .navbar-brand { font-size: 18px; letter-spacing: 1px; }
+            .banner-block .content h1 { font-size: 28px; line-height: 38px; }
+            .banner-block .content p { font-size: 18px; line-height: 26px; }
+            .service-item .body .label { font-size: 36px; line-height: 46px; }
+            .service-item .body .offer h4 { font-size: 18px; line-height: 28px; }
+            .service-item .body .offer p { font-size: 14px; line-height: 24px; }
+            .projects-block .title { font-size: 28px; line-height: 36px; }
+            .brand-block .content .team { font-size: 32px; line-height: 40px; }
+            .brand-block .content .delivered { font-size: 24px; line-height: 32px; }
+            .brand-block .content .clients { font-size: 36px; line-height: 44px; }
+            .btn-blue { font-size: 14px; padding: 6px 20px; }
+            .nav-link { font-size: 14px; }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-cirle a:hover::before { opacity: 1; top: 0; left: 0; right: 0; bottom: 0; }
+            .btn-cirle a:hover svg { stroke-dashoffset: 530px; }
+            .projects .projects-item:hover .img img { transform: none; }
+            .brand-list .brand-logos .brand-logo:hover .logo-icon { background: #F0F0F0; color: #8A8A8A; }
+            .brand-list .brand-logos .brand-logo:hover .logo-text { color: #8A8A8A; }
+        }
+        body.hidden-scroll { overflow: hidden; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a class="navbar-brand" href="#">dm2develop</a>
+                <div class="navbar-collapse" id="navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="clients.html">Clients</a></li>
+                        <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                        <li class="nav-item navGetInTouch">
+                            <a class="nav-link btn-blue" href="contact.html">Get In Touch</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="navbar-toggler" id="navbar-toggler" aria-label="Toggle menu">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="banner-block position-relative" id="home">
+        <div class="parallax-window" id="hero-parallax"></div>
+        <div class="content" data-aos="fade-up" data-aos-delay="300">
+            <div class="container">
+                <p>How I help you</p>
+                <h1>CODE<br/>WITH CONFIDENCE</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blend Banner -->
+    <section class="blend-banner-block position-relative" id="about">
+        <div class="content">
+            <div class="container">
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h2>I blend modern design, clean code, and robust technology to build your digital vision</h2>
+                    <h3>BUILD · DEPLOY · EXCEL</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="service-block position-relative ptb" id="services">
+        <div class="container">
+            <div class="title pb" data-aos="fade-up" data-aos-delay="300">A FULL STACK APPROACH,<br/> BESPOKE & COLLABORATIVE</div>
+        </div>
+        <div class="service-item">
+            
+            <div class="body position-relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="container">
+                    <div class="inner">
+                        <div class="label">01</div>
+                        <div class="offer">
+                            <h4>Frontend Development</h4>
+                            I create visually striking, responsive, and intuitive user interfaces using React, Vue, and modern CSS. I focus on delivering engaging user experiences that perform flawlessly across all devices and platforms.
+                        </div>
+                        <a href="#" class="link-add" aria-label="Service Detail">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="#D4AF37" stroke-width="1.5"/>
+                                <path d="M18 25H32M32 25L26 19M32 25L26 31" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body position-relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="container">
+                    <div class="inner">
+                        <div class="label">02</div>
+                        <div class="offer">
+                            <h4>Backend Development</h4>
+                            I build secure, scalable, and high-performance server-side applications using Node.js, Python, and PHP. From RESTful APIs to complex database architectures, I ensure your backend is robust and future-proof.
+                        </div>
+                        <a href="#" class="link-add" aria-label="Service Detail">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="#D4AF37" stroke-width="1.5"/>
+                                <path d="M18 25H32M32 25L26 19M32 25L26 31" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body position-relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="container">
+                    <div class="inner">
+                        <div class="label">03</div>
+                        <div class="offer">
+                            <h4>UI/UX Design</h4>
+                            My design process is rooted in user-centric principles. I craft wireframes, prototypes, and high-fidelity designs that are not only beautiful but also optimized for usability, accessibility, and conversion.
+                        </div>
+                        <a href="#" class="link-add" aria-label="Service Detail">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="#D4AF37" stroke-width="1.5"/>
+                                <path d="M18 25H32M32 25L26 19M32 25L26 31" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body position-relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="container">
+                    <div class="inner">
+                        <div class="label">04</div>
+                        <div class="offer">
+                            <h4>E-Commerce Solutions</h4>
+                            I specialize in crafting seamless and intuitive online stores using Shopify, WooCommerce, and custom solutions. I focus on creating user-friendly shopping experiences that drive conversions and maximize revenue.
+                        </div>
+                        <a href="#" class="link-add" aria-label="Service Detail">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="#D4AF37" stroke-width="1.5"/>
+                                <path d="M18 25H32M32 25L26 19M32 25L26 31" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body position-relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="container">
+                    <div class="inner">
+                        <div class="label">05</div>
+                        <div class="offer">
+                            <h4>Web App Development</h4>
+                            I develop secure, scalable, and feature-rich web applications tailored to your business needs. Using modern frameworks and best practices, I build solutions that enhance operational efficiency and user engagement.
+                        </div>
+                        <a href="#" class="link-add" aria-label="Service Detail">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="#D4AF37" stroke-width="1.5"/>
+                                <path d="M18 25H32M32 25L26 19M32 25L26 31" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body position-relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="container">
+                    <div class="inner">
+                        <div class="label">06</div>
+                        <div class="offer">
+                            <h4>CMS & WordPress</h4>
+                            I build custom, easy-to-manage websites on WordPress and other CMS platforms. From bespoke themes to complex plugin integrations, I deliver flexible solutions that empower you to manage your content effortlessly.
+                        </div>
+                        <a href="#" class="link-add" aria-label="Service Detail">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="#D4AF37" stroke-width="1.5"/>
+                                <path d="M18 25H32M32 25L26 19M32 25L26 31" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body position-relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="container">
+                    <div class="inner">
+                        <div class="label">07</div>
+                        <div class="offer">
+                            <h4>SEO & Performance</h4>
+                            I optimize your website for search engines and blazing-fast load times. My approach ensures maximum visibility, improved rankings, and an exceptional user experience that keeps visitors engaged and returning.
+                        </div>
+                        <a href="#" class="link-add" aria-label="Service Detail">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="#D4AF37" stroke-width="1.5"/>
+                                <path d="M18 25H32M32 25L26 19M32 25L26 31" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="body position-relative" data-aos="fade-up" data-aos-delay="300">
+                <div class="container">
+                    <div class="inner">
+                        <div class="label">08</div>
+                        <div class="offer">
+                            <h4>API Integration</h4>
+                            I seamlessly integrate third-party APIs and services into your web ecosystem. From payment gateways to CRMs and social media platforms, I ensure smooth data flow and extended functionality for your applications.
+                        </div>
+                        <a href="#" class="link-add" aria-label="Service Detail">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="24" stroke="#D4AF37" stroke-width="1.5"/>
+                                <path d="M18 25H32M32 25L26 19M32 25L26 31" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects-block position-relative pb" id="projects">
+        <div class="projects-bg"></div>
+        <div class="projects-heading">
+            <div class="title">PROJECTS</div>
+        </div>
+        <div class="container">
+            <div class="projects">
+                <div class="projects-list position-relative">
+                    <div class="projects-item" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#" class="img">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="E-Commerce Dashboard">
+                        </a>
+                        <div class="detail">
+                            <a href="#" class="name">E-Commerce Dashboard</a>
+                        </div>
+                    </div>
+                    <div class="projects-item" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#" class="img">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Analytics Platform">
+                        </a>
+                        <div class="detail">
+                            <a href="#" class="name">Analytics Platform</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-list">
+                    <div class="projects-item" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#" class="img">
+                            <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80" alt="Corporate Website">
+                        </a>
+                        <div class="detail">
+                            <a href="#" class="name">Corporate Website</a>
+                        </div>
+                    </div>
+                    <div class="projects-item" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#" class="img">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80" alt="Mobile App">
+                        </a>
+                        <div class="detail">
+                            <a href="#" class="name">Mobile App Interface</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-list position-relative">
+                    <div class="projects-item" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#" class="img">
+                            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=800&q=80" alt="SaaS Landing">
+                        </a>
+                        <div class="detail">
+                            <a href="#" class="name">SaaS Landing Page</a>
+                        </div>
+                    </div>
+                    <div class="projects-item" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#" class="img">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80" alt="Portfolio CMS">
+                        </a>
+                        <div class="detail">
+                            <a href="#" class="name">Portfolio CMS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-cirle">
+                <a href="#" aria-label="Project Detail">
+                    <span>Show Portfolio</span>
+                    <svg width="140" height="140" viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="85" cy="85" r="84" stroke="white" stroke-opacity="0.4" stroke-width="2" class="btn-circle"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="projects-bg-btm"></div>
+    </section>
+
+    <!-- Brand/Stats Section -->
+    <section class="brand-block position-relative pb" id="clients">
+        <div class="content">
+            <div class="team">1+ YEAR EXPERIENCE </div>
+            <div class="delivered">PROJECTS DELIVERED - 5</div>
+            <div class="clients">5+ HAPPY CLIENTS</div>
+        </div>
+        <div class="container">
+            <div class="brand-list">
+                <div class="brand-logos">
+                    <div class="brand-logo">
+                        <div class="client-logo">
+                            <img src="https://placehold.co/120x60/222/D4AF37?text=ESM&font=playfair-display" alt="Ekta Sethi Makeovers" loading="lazy">
+                        </div>
+                        <div class="logo-text">Ekta Sethi Makeovers</div>
+                    </div>
+                    <div class="brand-logo">
+                        <div class="client-logo">
+                            <img src="https://placehold.co/120x60/111/888?text=dm2print&font=roboto" alt="dm2print" loading="lazy">
+                        </div>
+                        <div class="logo-text">dm2print</div>
+                    </div>
+                    <div class="brand-logo">
+                        <div class="client-logo">
+                            <img src="https://placehold.co/120x60/333/fff?text=SHARMA&font=montserrat" alt="Sharma Enterprises" loading="lazy">
+                        </div>
+                        <div class="logo-text">Sharma Enterprises</div>
+                    </div>
+                    <div class="brand-logo">
+                        <div class="client-logo">
+                            <img src="https://placehold.co/120x60/1a1a1a/D4AF37?text=DDS&font=raleway" alt="Delhi Digital Solutions" loading="lazy">
+                        </div>
+                        <div class="logo-text">Delhi Digital Solutions</div>
+                    </div>
+                    <div class="brand-logo">
+                        <div class="client-logo">
+                            <img src="https://placehold.co/120x60/2a2a2a/fff?text=PATEL&font=lora" alt="Patel & Associates" loading="lazy">
+                        </div>
+                        <div class="logo-text">Patel & Associates</div>
+                    </div>
+                </div>
+                <div class="btn-cirle">
+                    <a href="#" class="btn-cirle-gold" aria-label="My Skills">
+                        <span>My Skills</span>
+                        <svg width="140" height="140" viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="85" cy="85" r="84" stroke="#D4AF37" stroke-opacity="0.4" stroke-width="2" class="btn-circle"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="enquiry-block position-relative ptb" id="contact">
+        <div class="title">get in touch</div>
+        <div class="container">
+            <div class="subtitle pb" data-aos="fade-up" data-aos-delay="300">
+                Got a project? Let's talk — I'm ready to bring your vision to life
+            </div>
+            <form class="form-theme ptb query-fm" data-aos="fade-up" data-aos-delay="400">
+                <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control" id="name" required />
+                </div>
+                <div class="form-group">
+                    <label for="last">Last Name</label>
+                    <input type="text" class="form-control" id="last" required />
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" class="form-control" id="company" required />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Mobile</label>
+                    <input type="text" class="form-control" id="phone" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="requirement">Your Requirement?</label>
+                    <input type="text" class="form-control" id="requirement" required />
+                </div>
+                <div class="form-group">
+                    <div class="g-recaptcha"></div>
+                </div>
+                <div class="form-group action text-center">
+                    <button type="button" class="btn btn-blue query-btn" aria-label="Submit">SUBMIT</button>
+                </div>
+            </form>
+            <div class="contact-info pt">
+                <div class="row" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info">
+                        <h4>Prefer to <br>call?</h4>
+                        <a href="tel:+91 92 8910 9101">+91 92 8910 9101</a>
+                    </div>
+                    <div class="info">
+                        <h4>Rather send me<br> an email?</h4>
+                        <a href="mailto:sethivayu@gmail.com">sethivayu@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="position-relative ptb">
+        <div class="container">
+            <div style="display: flex; gap: 40px;">
+                <div style="width: 25%;">
+                    <div class="info">
+                        <span class="brand-logo">dm2develop</span>
+                        <p>Hi, I'm Kunal — a hardworking web developer ready to take on any challenge. I build clean, high-performance websites and applications that make an impact.</p>
+                    </div>
+                </div>
+                <div style="width: 75%;">
+                    <div class="upperDetail">
+                        <ul class="footerMenu">
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#projects">Portfolio</a></li>
+                            <li><a href="clients.html">Clients</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                        <ul class="socialMenu">
+                            <li><a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="loweDetail">
+                        <ul class="addressDetail">
+                            <li>
+                                <a href="mailto:sethivayu@gmail.com"><i class="fas fa-envelope"></i> sethivayu@gmail.com</a>
+                            </li>
+                            <li class="mbNumber">
+                                <a href="tel:+919289109101"><i class="fas fa-phone-alt"></i> +91 92 8910 9101</a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank"><i class="fas fa-map-marker-alt"></i> Delhi, India</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright">
+        <div class="container">
+            <p>2026 dm2develop by Kunal Sethi. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS exactly like Olive.in
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false,
+            offset: 50
+        });
+
+        // Sticky Header
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Mobile Menu
+        const toggler = document.getElementById('navbar-toggler');
+        const navbarCollapse = document.getElementById('navbar-collapse');
+        
+        toggler.addEventListener('click', () => {
+            navbarCollapse.classList.toggle('active');
+            document.body.classList.toggle('hidden-scroll');
+        });
+
+        // Close menu when clicking nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navbarCollapse.classList.remove('active');
+                document.body.classList.remove('hidden-scroll');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navbarCollapse.classList.contains('active') && 
+                !navbarCollapse.contains(e.target) && 
+                !toggler.contains(e.target)) {
+                navbarCollapse.classList.remove('active');
+                document.body.classList.remove('hidden-scroll');
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navbarCollapse.classList.contains('active')) {
+                navbarCollapse.classList.remove('active');
+                document.body.classList.remove('hidden-scroll');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Parallax scroll effect for hero
+        function updateScrollEffects() {
+            const scrolled = window.pageYOffset;
+            const parallaxBg = document.getElementById('hero-parallax');
+            if (parallaxBg) {
+                const speed = 0.5;
+                parallaxBg.style.transform = `translate3d(0, ${scrolled * speed}px, 0)`;
+            }
+
+            // Projects heading fade effect
+            const projectsSection = document.getElementById('projects');
+            const projectsHeading = document.querySelector('.projects-heading');
+            if (projectsSection && projectsHeading) {
+                const rect = projectsSection.getBoundingClientRect();
+                const vh = window.innerHeight;
+                const sectionTop = rect.top;
+                const sectionBottom = rect.bottom;
+                
+                let opacity = 0;
+                const fadeZone = 400;
+                
+                if (sectionBottom <= 0 || sectionTop >= vh) {
+                    opacity = 0;
+                }
+                else if (sectionTop > vh - fadeZone) {
+                    // Entering from bottom: fade in
+                    opacity = (vh - sectionTop) / fadeZone;
+                }
+                else if (sectionBottom < fadeZone) {
+                    // Leaving from top: fade out
+                    opacity = sectionBottom / fadeZone;
+                }
+                else {
+                    // Fully visible in viewport
+                    opacity = 1;
+                }
+                
+                projectsHeading.style.opacity = Math.max(0, Math.min(1, opacity));
+            }
+
+        }
+        
+        // Run on load and scroll
+        window.addEventListener('scroll', updateScrollEffects);
+        window.addEventListener('load', updateScrollEffects);
+        updateScrollEffects();
+
+        // Form Handler
+        document.querySelector('.query-btn').addEventListener('click', function() {
+            const btn = this;
+            btn.textContent = 'Sending...';
+            setTimeout(() => {
+                alert('Thank you for reaching out! I will get back to you soon.');
+                document.querySelector('.query-fm').reset();
+                btn.textContent = 'SUBMIT';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

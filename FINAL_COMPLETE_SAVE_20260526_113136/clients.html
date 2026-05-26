@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>Our Clients | dm2develop</title>
+    <meta name="description" content="Clients and partners of dm2develop - Web Developer & Digital Solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #111111;
+            color: #E5DDD0;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 50px;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(17, 17, 17, 0.9);
+        }
+        .navbar-brand {
+            font-family: 'Michroma', sans-serif;
+            font-size: 24px;
+            color: #D4AF37;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .home-icon {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D4AF37;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+        .home-icon:hover {
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.1);
+            transform: scale(1.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 50px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #111111 0%, #0A0A0A 100%);
+        }
+        .hero h1 {
+            font-family: 'Michroma', sans-serif;
+            font-size: 72px;
+            line-height: 90px;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 24px;
+            color: #A0A0A0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Clients Grid */
+        .clients-section {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .client-card {
+            background: #1a1a1a;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            transition: all 0.5s ease;
+        }
+        .client-card:hover {
+            border-color: #D4AF37;
+            transform: translateY(-5px);
+        }
+        .client-logo {
+            width: 120px;
+            height: 120px;
+            background: #222;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .client-logo img {
+            width: 80px;
+            height: 40px;
+            object-fit: contain;
+            filter: grayscale(1);
+            opacity: 0.8;
+            transition: all 0.5s ease;
+        }
+        .client-card:hover .client-logo img {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        .client-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 28px;
+            color: #E5DDD0;
+            margin-bottom: 10px;
+        }
+        .client-info .industry {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #D4AF37;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        .client-info p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 28px;
+            color: #A0A0A0;
+        }
+        .client-info .project-tag {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #D4AF37;
+            margin-top: 15px;
+        }
+        
+        /* Stats Banner */
+        .stats-banner {
+            background: #0A0A0A;
+            padding: 60px 50px;
+            text-align: center;
+        }
+        .stats-banner .stat-number {
+            font-family: 'Michroma', sans-serif;
+            font-size: 96px;
+            line-height: 100px;
+            background: linear-gradient(180deg, #D4AF37 0%, #111111 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .stats-banner .stat-label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            color: #A0A0A0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #111111;
+            width: 100%;
+            overflow: hidden;
+            border-top: 1px solid #333333;
+            padding: 50px 0 0;
+        }
+        footer .upperDetail {
+            width: 100%;
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px 20px;
+        }
+        footer .upperDetail .footerMenu {
+            width: calc(100% - 130px);
+            justify-content: left;
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+        footer .upperDetail .footerMenu li a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: #F5F5F0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer .upperDetail .footerMenu li a:hover { color: #D4AF37; }
+        footer .upperDetail .socialMenu {
+            list-style: none;
+            display: flex;
+            width: 130px;
+        }
+        footer .upperDetail .socialMenu li { margin: 0 10px; }
+        footer .upperDetail .socialMenu li a {
+            display: block;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            background-color: #333333;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: #D4AF37;
+            text-decoration: none;
+            transition: all 0.5s;
+        }
+        footer .upperDetail .socialMenu li a:hover {
+            background-color: #D4AF37;
+            color: #E5DDD0;
+        }
+        footer .loweDetail {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            padding: 0 50px;
+        }
+        footer .loweDetail .addressDetail {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            list-style: none;
+        }
+        footer .loweDetail .addressDetail li { width: 30%; }
+        footer .loweDetail .addressDetail li:last-child { width: 45%; }
+        footer .loweDetail .addressDetail li:nth-child(2) {
+            width: 25%;
+            padding: 0 10px;
+        }
+        footer .loweDetail .addressDetail li a {
+            font-size: 18px;
+            color: #A0A0A0;
+            padding-left: 30px;
+            position: relative;
+            display: block;
+            text-decoration: none;
+        }
+        footer .loweDetail .addressDetail li a i {
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        .copyright {
+            width: 100%;
+            background: #111111;
+            padding: 15px 0;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #333333;
+        }
+        .copyright p {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #E5DDD0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 48px; line-height: 60px; }
+            .client-card { flex-direction: column; text-align: center; }
+            .stats-banner .stat-number { font-size: 60px; line-height: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="navbar-brand">dm2develop</a>
+        <a href="index.html" class="home-icon" aria-label="Back to Home">
+            <i class="fas fa-home"></i>
+        </a>
+    </header>
+
+    <div class="hero">
+        <h1>Our Clients</h1>
+        <p>Proud to have worked with amazing businesses and individuals who trust us with their digital presence</p>
+    </div>
+
+    <div class="clients-section">
+        <div class="client-card">
+            <div class="client-logo">
+                <img src="https://placehold.co/120x60/222/D4AF37?text=ESM&font=playfair-display" alt="Ekta Sethi Makeovers">
+            </div>
+            <div class="client-info">
+                <h3>Ekta Sethi Makeovers</h3>
+                <div class="industry">Beauty & Makeup Services</div>
+                <p>Complete website design and development for a professional makeup artist portfolio. Features stunning gallery showcase, service booking system, and elegant brand presentation.</p>
+                <span class="project-tag">Portfolio Website</span>
+            </div>
+        </div>
+
+        <div class="client-card">
+            <div class="client-logo">
+                <img src="https://placehold.co/120x60/111/888?text=dm2print&font=roboto" alt="dm2print">
+            </div>
+            <div class="client-info">
+                <h3>dm2print</h3>
+                <div class="industry">Printing & Design Services</div>
+                <p>E-commerce platform development for a printing business with custom order management, product catalog, and seamless checkout experience.</p>
+                <span class="project-tag">E-Commerce</span>
+            </div>
+        </div>
+
+        <div class="client-card">
+            <div class="client-logo">
+                <img src="https://placehold.co/120x60/333/fff?text=SHARMA&font=montserrat" alt="Sharma Enterprises">
+            </div>
+            <div class="client-info">
+                <h3>Sharma Enterprises</h3>
+                <div class="industry">Retail & Distribution</div>
+                <p>Business website with integrated inventory management system, dealer portal, and automated reporting dashboard for a local distribution company.</p>
+                <span class="project-tag">Business Website</span>
+            </div>
+        </div>
+
+        <div class="client-card">
+            <div class="client-logo">
+                <img src="https://placehold.co/120x60/1a1a1a/D4AF37?text=DDS&font=raleway" alt="Delhi Digital Solutions">
+            </div>
+            <div class="client-info">
+                <h3>Delhi Digital Solutions</h3>
+                <div class="industry">Digital Marketing Agency</div>
+                <p>Collaborated on multiple client projects providing frontend development, landing pages, and responsive web solutions for their digital marketing campaigns.</p>
+                <span class="project-tag">Collaboration</span>
+            </div>
+        </div>
+
+        <div class="client-card">
+            <div class="client-logo">
+                <img src="https://placehold.co/120x60/2a2a2a/fff?text=PATEL&font=lora" alt="Patel & Associates">
+            </div>
+            <div class="client-info">
+                <h3>Patel & Associates</h3>
+                <div class="industry">Legal & Consultancy</div>
+                <p>Professional website for a legal consultancy firm with case studies section, team profiles, contact forms, and secure document upload functionality.</p>
+                <span class="project-tag">Professional Services</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-banner">
+        <div class="stat-number">5+</div>
+        <div class="stat-label">Projects Delivered</div>
+    </div>
+
+    <footer>
+        <div class="upperDetail">
+            <ul class="footerMenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#projects">Portfolio</a></li>
+                <li><a href="clients.html">Clients</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <ul class="socialMenu">
+                <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
+        <div class="loweDetail">
+            <ul class="addressDetail">
+                <li><a href="mailto:sethivayu@gmail.com"><i class="fas fa-envelope"></i> sethivayu@gmail.com</a></li>
+                <li><a href="tel:+919289109101"><i class="fas fa-phone-alt"></i> +91 92 8910 9101</a></li>
+                <li><a href="#"><i class="fas fa-map-marker-alt"></i> Delhi, India</a></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="copyright">
+        <p>2026 dm2develop by Kunal Sethi. All rights reserved.</p>
+    </div>
+</body>
+</html>

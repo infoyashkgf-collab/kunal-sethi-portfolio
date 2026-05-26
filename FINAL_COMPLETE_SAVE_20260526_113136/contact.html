@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>Contact Us | dm2develop</title>
+    <meta name="description" content="Get in touch with Kunal Sethi - dm2develop. Web Developer & Digital Solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #111111;
+            color: #E5DDD0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 50px;
+            z-index: 100;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .home-icon {
+            width: 50px;
+            height: 50px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D4AF37;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+        .home-icon:hover {
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.1);
+            transform: scale(1.1);
+        }
+        .navbar-brand {
+            font-family: 'Michroma', sans-serif;
+            font-size: 24px;
+            color: #D4AF37;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .back-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #A0A0A0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.5s ease;
+        }
+        .back-link:hover { color: #D4AF37; }
+        .back-link i { font-size: 14px; }
+        
+        /* Main Content */
+        .contact-container {
+            text-align: center;
+            padding: 120px 40px 60px;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .brand-name {
+            font-family: 'Michroma', sans-serif;
+            font-size: 72px;
+            line-height: 90px;
+            color: #D4AF37;
+            margin-bottom: 60px;
+            letter-spacing: 4px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-item .icon {
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D4AF37;
+            font-size: 28px;
+            transition: all 0.5s ease;
+        }
+        .contact-item:hover .icon {
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .contact-item .label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #8B7355;
+        }
+        
+        .contact-item .value {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 28px;
+            color: #E5DDD0;
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
+        .contact-item .value:hover { color: #D4AF37; }
+        
+        /* Divider */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            margin: 20px auto;
+        }
+        
+        /* Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            text-align: center;
+            background: #111111;
+            border-top: 1px solid #333333;
+        }
+        footer p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #A0A0A0;
+        }
+        footer p span { color: #D4AF37; }
+        
+        /* Mobile scaling */
+        @media (max-width: 768px) {
+            .brand-name { font-size: 48px; line-height: 60px; }
+            .contact-item .value { font-size: 22px; }
+            header { padding: 15px 20px; }
+            .contact-container { padding: 100px 20px 40px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="home-icon" aria-label="Back to Home">
+            <i class="fas fa-home"></i>
+        </a>
+    </header>
+
+    <div class="contact-container">
+        <div class="brand-name">dm2develop</div>
+        
+        <div class="divider"></div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="label">Phone</div>
+                <a href="tel:+919289109101" class="value">+91 9289109101</a>
+            </div>
+            
+            <div class="contact-item">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="label">Email</div>
+                <a href="mailto:sethivayu@gmail.com" class="value">sethivayu@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><span>dm2develop</span> by Kunal Sethi | Delhi, India</p>
+    </footer>
+</body>
+</html>
