@@ -403,6 +403,7 @@
             z-index: 2;
             pointer-events: none;
             transition: opacity 0.15s linear;
+            opacity: 0;
         }
         .projects-block .title {
             font-family: 'Michroma', sans-serif;
@@ -1541,7 +1542,7 @@
         });
 
         // Parallax scroll effect for hero
-        window.addEventListener('scroll', () => {
+        function updateScrollEffects() {
             const scrolled = window.pageYOffset;
             const parallaxBg = document.getElementById('hero-parallax');
             if (parallaxBg) {
@@ -1580,7 +1581,12 @@
                 projectsHeading.style.opacity = Math.max(0, Math.min(1, opacity));
             }
 
-        });
+        }
+        
+        // Run on load and scroll
+        window.addEventListener('scroll', updateScrollEffects);
+        window.addEventListener('load', updateScrollEffects);
+        updateScrollEffects();
 
         // Form Handler
         document.querySelector('.query-btn').addEventListener('click', function() {
