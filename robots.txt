@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Disallow: /FINAL_*/
+Disallow: /BACKUP_*/
+Disallow: /SAVED_*/
+Disallow: /MY_WEBSITE_PROMPT/
+
+# Sitemap
+Sitemap: https://infoyashkgf-collab.github.io/kunal-sethi-portfolio/sitemap.xml
+
+# Crawl-delay for bots
+Crawl-delay: 10
+
+# Host
+Host: https://infoyashkgf-collab.github.io/kunal-sethi-portfolio/
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 5
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 5
